@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Lexer.cpp
+Lexer.h
+/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Lexer.h
+
+/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Lexer.h
+string
+-
+fstream
+-
+iostream
+-
+Token.h
+/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Token.h
+ctype.h
+-
+
+/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Token.h
+string
+-
+
+/home/jesmar/Documents/School/CompilerTheory/Assignment/Main.cpp
+iostream
+-
+ClassLib/Lexer.h
+/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Lexer.h
+

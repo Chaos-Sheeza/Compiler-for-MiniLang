@@ -1,0 +1,224 @@
+while(fileStr[i]){
+        if(isalpha(fileStr[i])){                                                //Second row
+            if(prevState == 0 || prevState == 1){
+                prevState = 1;
+                std::cout << prevState << "\n";
+                lexeme += fileStr[i];
+            }
+            else if (prevState == 7)
+            {
+                prevState = 7;
+                std::cout << prevState << "\n";
+            }
+            else if (prevState == 9)
+            {
+                prevState = 9;
+                std::cout << prevState << "\n";
+            }
+            else
+            {
+                std::cout << prevState << "\n";
+                prevState = 0;
+                std::cout << lexeme << "\n";
+                lexeme = "";
+                i--;
+            }           
+        }
+        else if (isdigit(fileStr[i]))                                           //Third row
+        {
+            if(prevState == 0 || prevState == 2 || prevState == 3){
+                prevState = 2;
+                std::cout << prevState << "\n";
+                lexeme += fileStr[i]; 
+            }
+            else if (prevState == 1){
+                prevState = 1;
+                std::cout << prevState << "\n";
+                lexeme += fileStr[i];
+            }
+            else if (prevState == 7)
+            {
+                prevState = 7;
+                std::cout << prevState << "\n";
+            }
+            else if (prevState == 9)
+            {
+                prevState = 9;
+                std::cout << prevState << "\n";
+            }
+            else
+            {
+                std::cout << prevState << "\n";
+                prevState = 0;
+                std::cout << lexeme << "\n";
+                lexeme = "";
+                i--;
+            } 
+        }
+        else if(fileStr[i] == '.'){                                         //Fourth row
+            if (prevState == 0){
+                std::cout << "error" << "\n";
+            }
+            else if (prevState == 2)
+            {
+                prevState = 3;
+                std::cout << prevState << "\n";
+                lexeme += fileStr[i];
+            }
+            else if (prevState == 7)
+            {
+                prevState = 7;
+                std::cout << prevState << "\n";
+            }
+            else if (prevState == 9)
+            {
+                prevState = 9;
+                std::cout << prevState << "\n";
+            }
+            else{
+                std::cout << prevState << "\n";
+                prevState = 0;
+                std::cout << lexeme << "\n";
+                lexeme = "";
+                i--;
+            }
+        }
+        else if(fileStr[i] == '+' || fileStr[i] == '-'){                                  //Fifth row
+            if (prevState == 0){
+                prevState = 4; 
+                std::cout << prevState << "\n";
+            }
+            else if (prevState == 7)
+            {
+                prevState = 7;
+                std::cout << prevState << "\n";
+            }
+            else if (prevState == 9)
+            {
+                prevState = 9;
+                std::cout << prevState << "\n";
+            }
+            else{
+                std::cout << prevState << "\n";
+                prevState = 0;
+                std::cout << lexeme << "\n";
+                lexeme = "";
+                i--;
+            }
+        }
+        else if(fileStr[i] == '*'){                                         //Sixth row
+            if (prevState == 0){
+                prevState = 4;
+                std::cout << prevState << "\n";
+            }
+            else if (prevState == 5)
+            {
+                prevState = 6;
+                std::cout << prevState << "\n";
+                lexeme += fileStr[i];
+            }
+            else if (prevState == 6)
+            {
+                prevState = 7;
+                std::cout << prevState << "\n";
+            }
+            else if (prevState == 7)
+            {
+                prevState = 7;
+                std::cout << prevState << "\n";
+            }
+            else if (prevState == 9)
+            {
+                prevState = 9;
+                std::cout << prevState << "\n";
+            }
+            else{
+                std::cout << prevState << "\n";
+                prevState = 0;
+                std::cout << lexeme << "\n";
+                lexeme = "";
+                i--;
+            }
+        }
+        else if(fileStr[i] == '/'){                                         //Seventh row
+            if (prevState == 0){
+                prevState = 5;
+                std::cout << prevState << "\n";
+            }
+            else if (prevState == 5)
+            {
+                prevState = 9;
+                std::cout << prevState << "\n";
+            }
+            else if (prevState == 7)
+            {
+                prevState = 8;
+                std::cout << prevState << "\n";
+            }
+            else if (prevState == 9)
+            {
+                prevState = 9;
+                std::cout << prevState << "\n";
+            }
+            else{
+                std::cout << prevState << "\n";
+                prevState = 0;
+                std::cout << lexeme << "\n";
+                lexeme = "";
+                i--;
+            }
+        }
+        else if(fileStr[i] == '\n'){                                         //Eighth row
+            if (prevState == 7){
+                prevState = 7;
+                std::cout << prevState << "\n";
+            }
+            else if (prevState == 9)
+            {
+                prevState = 10;
+                std::cout << prevState << "\n";
+            }
+            else{
+                std::cout << prevState << "\n";
+                prevState = 0;
+                std::cout << lexeme << "\n";
+                lexeme = "";
+                i--;
+            }
+        }
+        else if(fileStr[i] == '*'){                                         //Nineth row
+            if (prevState == 0){
+                prevState = 4;
+                std::cout << prevState << "\n";
+            }
+            else if (prevState == 5)
+            {
+                prevState = 6;
+                std::cout << prevState << "\n";
+                lexeme += fileStr[i];
+            }
+            else if (prevState == 6)
+            {
+                prevState = 7;
+                std::cout << prevState << "\n";
+            }
+            else if (prevState == 7)
+            {
+                prevState = 7;
+                std::cout << prevState << "\n";
+            }
+            else if (prevState == 9)
+            {
+                prevState = 9;
+                std::cout << prevState << "\n";
+            }
+            else{
+                std::cout << prevState << "\n";
+                prevState = 0;
+                std::cout << lexeme << "\n";
+                lexeme = "";
+                i--;
+            }
+        }
+        i++;
+    }
