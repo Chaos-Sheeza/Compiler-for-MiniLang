@@ -7,6 +7,5 @@ int main( int argc, const char* argv[] )
     Lexer l = Lexer(fileName);
     //l.debugPrint();
     l.GenerateTokens();
-    
     return 0;
 }

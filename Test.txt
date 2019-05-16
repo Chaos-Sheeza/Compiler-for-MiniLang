@@ -1,2 +1,4 @@
-hello.
+hello
 20.10
+var x = 10;
+
