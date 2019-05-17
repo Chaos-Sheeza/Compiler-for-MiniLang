@@ -23,8 +23,7 @@ enum tokenType{
     VAR_DEC = 30,
     VARNAME_DEC,
     NUMBER_DEC,
-    COL_DEC,
-    SEMCOL_DEC,
+    PRINT_DEC,
     EQ_DEC,
     FN_DEC,
     RET_EXP,
@@ -36,6 +35,7 @@ enum tokenType{
     CIRCLEOP_BRACKET,
     CIRCLECL_BRACKET,
     SEMICOL_PUNCT,
+    COL_PUNCT,
     COMMA_PUNCT,
     NONTOKEN = 50
 };

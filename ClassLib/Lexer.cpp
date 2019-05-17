@@ -7,7 +7,11 @@ Lexer::Lexer(string fileName){
 }
 
 void Lexer::debugPrint(){
-    std::cout << fileStr << "\n";
+    for (int i = 0; i < allTokens.size(); i++)
+    {
+        std::cout << allTokens[i].token << "\n";
+    }
+    
     return;
 }
 
@@ -42,7 +46,7 @@ int Lexer::getRow(char c){
     else if(c == '>' || c == '>'){
         return 10;
     }
-    else if(c == '{' || c == '}' || c == '(' || c == ')' || c == ';' || c == ','){
+    else if(c == '{' || c == '}' || c == '(' || c == ')' || c == ';' || c == ',' || c == ':'){
         return 11;
     }
     else{
@@ -60,6 +64,9 @@ Token Lexer::keywordHandling(string lexeme){
         }
     }
     switch(temp){
+        case 0:
+            return Token(PRINT_DEC,lexeme,0);
+            break;
         case 1:
             return Token(FLOAT_TYPE,lexeme,0);
             break;
@@ -172,7 +179,7 @@ Token Lexer::relOpHandling(string lexeme){
 
 Token Lexer::punctHandling(string lexeme){
     int temp = 0;
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < 7; i++)
     {
         if(lexeme == punct[i]){
             temp = i;
@@ -199,6 +206,9 @@ Token Lexer::punctHandling(string lexeme){
         break;
     case 5:
         return Token(COMMA_PUNCT,lexeme,0);
+        break;
+    case 6:
+        return Token(COL_PUNCT,lexeme,0);
         break;
     default:
         return Token();
