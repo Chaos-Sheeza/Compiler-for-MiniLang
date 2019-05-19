@@ -279,3 +279,24 @@ void Lexer::GenerateTokens(){
     prevState = 0;
     lexeme = "";
 }
+
+Token Lexer::getNextToken(){
+    tokenCounter++;
+    if (tokenCounter < allTokens.size()){
+        return allTokens[tokenCounter-1];
+    }
+    else
+    {
+        return Token();
+    }   
+}
+
+Token Lexer::peekNextToken(){
+    if (tokenCounter < allTokens.size()){
+        return allTokens[tokenCounter];
+    }
+    else
+    {
+        return Token();
+    } 
+}

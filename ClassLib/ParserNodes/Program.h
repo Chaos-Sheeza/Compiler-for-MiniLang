@@ -1,8 +1,10 @@
+#include "Statement.h"
+#include "../Lexer.h"
+
 class Program
 {
-private:
-    /* data */
 public:
-    Program(/* args */);
+    vector<Statement> statements;
+    Program(Lexer);
     ~Program();
 };

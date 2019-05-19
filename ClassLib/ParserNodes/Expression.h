@@ -1,8 +1,12 @@
+#include "SimpleExpr.h"
+#include "../Lexer.h"
+using std::pair;
+
 class Expression
 {
-private:
-    /* data */
 public:
-    Expression(/* args */);
+    SimpleExpr* node1;
+    vector< pair <Token, SimpleExpr*>> node2Set;
+    Expression(Lexer);
     ~Expression();
 };

@@ -34,6 +34,8 @@ class Lexer{
     string ops[3] = {"+","-","*"};
     string relOps[6] = {"=",">","<","==",">=","<="};
     string punct[7] = {"(",")","{","}",";",",",":"};
+    int tokenCounter = 0;
+    vector<Token> allTokens;
 
     int getRow(char);
 
@@ -49,14 +51,15 @@ class Lexer{
 
     public:
 
-    vector<Token> allTokens;
-
     Lexer(string);
 
     void GenerateTokens();
 
     void debugPrint();
 
+    Token getNextToken();
+
+    Token peekNextToken();
     //~Lexer();
 };
 

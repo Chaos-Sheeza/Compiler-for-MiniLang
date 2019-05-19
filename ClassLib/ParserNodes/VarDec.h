@@ -1,8 +1,12 @@
+#include "../Lexer.h"
+#include "Expression.h"
+
 class VarDec
 {
-private:
-    /* data */
 public:
-    VarDec(/* args */);
+    Token iden;
+    Token type;
+    Expression* e;
+    VarDec(Lexer);
     ~VarDec();
 };
