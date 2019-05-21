@@ -1,4 +1,4 @@
-#include "VarDec.h"
+#include "1MainHeader.h"
 
 VarDec::VarDec(Lexer l){
     Token t = l.getNextToken();

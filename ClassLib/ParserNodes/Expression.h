@@ -1,6 +1,5 @@
 #include "SimpleExpr.h"
 #include "../Lexer.h"
-using std::pair;
 
 class Expression
 {

@@ -1,8 +1,11 @@
+#include "../Lexer.h"
+#include "Expression.h"
+
 class ActualParams
 {
-private:
-    /* data */
 public:
-    ActualParams(/* args */);
+    Expression* expr;
+    vector<pair <Token, Expression*>> exprSet;
+    ActualParams(Lexer);
     ~ActualParams();
 };

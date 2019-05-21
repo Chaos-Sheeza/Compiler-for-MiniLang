@@ -6,6 +6,7 @@
 #include <vector>
 using std::vector;
 using std::string;
+using std::pair;
 
 #ifndef MAIN_LEXER_H
 #define MAIN_LEXER_H

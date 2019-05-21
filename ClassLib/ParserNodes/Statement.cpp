@@ -1,4 +1,4 @@
-#include "Statement.h"
+#include "1MainHeader.h"
 
 Statement::Statement(Lexer l){
     Token t = l.getNextToken();

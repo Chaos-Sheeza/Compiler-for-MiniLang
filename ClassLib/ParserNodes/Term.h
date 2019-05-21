@@ -1,8 +1,11 @@
+#include "../Lexer.h"
+#include "Factor.h"
+
 class Term
 {
-private:
-    /* data */
 public:
-    Term(/* args */);
+    Factor* node1;
+    vector<pair <Token, Factor*>> node2Set;
+    Term(Lexer);
     ~Term();
 };

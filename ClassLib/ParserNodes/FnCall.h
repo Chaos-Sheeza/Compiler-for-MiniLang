@@ -1,8 +1,11 @@
+#include "../Lexer.h"
+#include "ActualParams.h"
+
 class FnCall
 {
-private:
-    /* data */
 public:
-    FnCall(/* args */);
+    Token t;
+    ActualParams* ap;
+    FnCall(Token, Lexer);
     ~FnCall();
 };

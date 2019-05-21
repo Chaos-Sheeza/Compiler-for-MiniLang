@@ -1,8 +1,8 @@
+#include "../Lexer.h"
+
 class Unary
 {
-private:
-    /* data */
 public:
-    Unary(/* args */);
+    Unary(Lexer);
     ~Unary();
 };

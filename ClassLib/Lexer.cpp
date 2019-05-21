@@ -1,5 +1,4 @@
 #include "Lexer.h"
-using std::string;
 
 Lexer::Lexer(string fileName){
         std::ifstream ifs(fileName);

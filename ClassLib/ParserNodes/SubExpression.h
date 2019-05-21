@@ -1,8 +1,8 @@
+#include "../Lexer.h"
+
 class SubExpression
 {
-private:
-    /* data */
 public:
-    SubExpression(/* args */);
+    SubExpression(Lexer);
     ~SubExpression();
 };
