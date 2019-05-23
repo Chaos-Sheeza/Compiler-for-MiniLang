@@ -5,7 +5,6 @@ int main( int argc, const char* argv[] )
 {
     std::string fileName = "../TestCode.txt";
     Lexer l = Lexer(fileName);
-    l.GenerateTokens();
-    l.debugPrint();
+    //l.debugPrint();
     return 0;
 }

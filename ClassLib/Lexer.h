@@ -50,12 +50,12 @@ class Lexer{
 
     Token punctHandling(string);
 
+    void GenerateTokens();
+
     public:
 
     Lexer(string);
-
-    void GenerateTokens();
-
+    
     void debugPrint();
 
     Token getNextToken();

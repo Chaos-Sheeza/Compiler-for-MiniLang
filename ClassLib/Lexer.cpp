@@ -3,6 +3,7 @@
 Lexer::Lexer(string fileName){
         std::ifstream ifs(fileName);
         fileStr.assign( (std::istreambuf_iterator<char>(ifs)), (std::istreambuf_iterator<char>()));
+        GenerateTokens();
 }
 
 void Lexer::debugPrint(){
