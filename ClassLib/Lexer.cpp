@@ -56,7 +56,7 @@ int Lexer::getRow(char c){
 
 Token Lexer::keywordHandling(string lexeme){
     int temp = 0;
-    for (int i = 1; i < 15; i++)
+    for (int i = 1; i < 16; i++)
     {
         if(lexeme == keywords[i]){
             temp = i;
@@ -64,7 +64,7 @@ Token Lexer::keywordHandling(string lexeme){
         }
     }
     switch(temp){
-        case 0:
+        case 15:
             return Token(PRINT_DEC,lexeme,0);
             break;
         case 1:
@@ -252,6 +252,7 @@ void Lexer::states(string lexeme, int state){
         break;
     
     default:
+        allTokens.push_back(Token());
         break;
     }
 }

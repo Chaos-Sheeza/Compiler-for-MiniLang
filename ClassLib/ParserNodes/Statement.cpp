@@ -36,6 +36,7 @@ Statement::Statement(Lexer l){
         break;
     case PRINT_DEC:
         pr = new PrintState(l);
+        l.getNextToken();
         break;
     default:
         std::cerr << "Syntax error in " << l.getNextToken().lexeme << "\n";

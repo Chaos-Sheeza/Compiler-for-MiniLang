@@ -9,9 +9,9 @@
 class Parser
 {
 public:
-    Program* prog = nullptr;
     Parser(Lexer);
-    ~Parser();
+    Program* prog = nullptr;
+    //~Parser();
 };
 
 #endif

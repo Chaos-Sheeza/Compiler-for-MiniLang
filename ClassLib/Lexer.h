@@ -31,7 +31,7 @@ class Lexer{
         /*punct*/       {   19, -1, -1, -1, -1, -1,  6,  6, -1,  9, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}
         // -1 is the default state. States 9,7,6,3 are non-accepted states (generate non-tokens).
     };
-    string keywords[15] = {"print","float","int","bool","true","false","and","or","not","var","fn","return","if","else","for"};
+    string keywords[16] = {"","float","int","bool","true","false","and","or","not","var","fn","return","if","else","for", "print"};
     string ops[3] = {"+","-","*"};
     string relOps[6] = {"=",">","<","==",">=","<="};
     string punct[7] = {"(",")","{","}",";",",",":"};
