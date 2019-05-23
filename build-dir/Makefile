@@ -150,6 +150,33 @@ ClassLib/Lexer.cpp.s:
 	$(MAKE) -f CMakeFiles/Compiler.dir/build.make CMakeFiles/Compiler.dir/ClassLib/Lexer.cpp.s
 .PHONY : ClassLib/Lexer.cpp.s
 
+ClassLib/Parser.o: ClassLib/Parser.cpp.o
+
+.PHONY : ClassLib/Parser.o
+
+# target to build an object file
+ClassLib/Parser.cpp.o:
+	$(MAKE) -f CMakeFiles/Compiler.dir/build.make CMakeFiles/Compiler.dir/ClassLib/Parser.cpp.o
+.PHONY : ClassLib/Parser.cpp.o
+
+ClassLib/Parser.i: ClassLib/Parser.cpp.i
+
+.PHONY : ClassLib/Parser.i
+
+# target to preprocess a source file
+ClassLib/Parser.cpp.i:
+	$(MAKE) -f CMakeFiles/Compiler.dir/build.make CMakeFiles/Compiler.dir/ClassLib/Parser.cpp.i
+.PHONY : ClassLib/Parser.cpp.i
+
+ClassLib/Parser.s: ClassLib/Parser.cpp.s
+
+.PHONY : ClassLib/Parser.s
+
+# target to generate assembly for a file
+ClassLib/Parser.cpp.s:
+	$(MAKE) -f CMakeFiles/Compiler.dir/build.make CMakeFiles/Compiler.dir/ClassLib/Parser.cpp.s
+.PHONY : ClassLib/Parser.cpp.s
+
 Main.o: Main.cpp.o
 
 .PHONY : Main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... ClassLib/Lexer.o"
 	@echo "... ClassLib/Lexer.i"
 	@echo "... ClassLib/Lexer.s"
+	@echo "... ClassLib/Parser.o"
+	@echo "... ClassLib/Parser.i"
+	@echo "... ClassLib/Parser.s"
 	@echo "... Main.o"
 	@echo "... Main.i"
 	@echo "... Main.s"

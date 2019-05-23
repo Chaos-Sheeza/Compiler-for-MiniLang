@@ -1,75 +1,19 @@
 #include "../Lexer.h"
 
-class Program
+
+#ifndef MAIN_AST_H
+#define MAIN_AST_H
+
+class Expression;
+class FnDec;
+
+class ActualParams
 {
 public:
-    vector<Statement*> statements;
-    Program(Lexer);
-    ~Program();
-};
-
-class Statement
-{
-public:
-    VarDec* vrs = nullptr;
-    IfState* ifs = nullptr;
-    ForState* fors = nullptr;
-    ReturnState* ret = nullptr;
-    FnDec* fn = nullptr;
-    Block* bl = nullptr;
-    PrintState* pr = nullptr;
-
-    Statement(Lexer);
-    ~Statement();
-};
-
-class VarDec
-{
-public:
-    Token iden;
-    Token type;
-    Expression* e = nullptr;
-    VarDec(Lexer);
-    ~VarDec();
-};
-
-class Expression
-{
-public:
-    SimpleExpr* node1 = nullptr;
-    vector< pair <Token, SimpleExpr*>> node2Set;
-    Expression(Lexer);
-    ~Expression();
-};
-
-class SimpleExpr
-{
-public:
-    Term* node1 = nullptr;
-    vector<pair <Token, Term*>> node2Set;
-    SimpleExpr(Lexer);
-    ~SimpleExpr();
-};
-
-class Term
-{
-public:
-    Factor* node1 = nullptr;
-    vector<pair <Token, Factor*>> node2Set;
-    Term(Lexer);
-    ~Term();
-};
-
-class Factor
-{
-public:
-    Token t;
-    FnCall* fnCl = nullptr;
-    SubExpression* subExpr = nullptr;
-    Unary* un;
-    
-    Factor(Lexer);
-    ~Factor();
+    Expression* expr = nullptr;
+    vector<Expression*> exprSet;
+    ActualParams(Lexer);
+    ~ActualParams();
 };
 
 class FnCall
@@ -89,15 +33,6 @@ public:
     ~SubExpression();
 };
 
-class ActualParams
-{
-public:
-    Expression* expr = nullptr;
-    vector<Expression*> exprSet;
-    ActualParams(Lexer);
-    ~ActualParams();
-};
-
 class Unary
 {
 public:
@@ -105,6 +40,65 @@ public:
     Expression* expr = nullptr;
     Unary(Lexer);
     ~Unary();
+};
+
+class Factor
+{
+public:
+    Token t;
+    FnCall* fnCl = nullptr;
+    SubExpression* subExpr = nullptr;
+    Unary* un;
+    
+    Factor(Lexer);
+    ~Factor();
+};
+
+class Term
+{
+public:
+    Factor* node1 = nullptr;
+    vector<pair <Token, Factor*>> node2Set;
+    Term(Lexer);
+    ~Term();
+};
+
+class SimpleExpr
+{
+public:
+    Term* node1 = nullptr;
+    vector<pair <Token, Term*>> node2Set;
+    SimpleExpr(Lexer);
+    ~SimpleExpr();
+};
+
+class Expression
+{
+public:
+    SimpleExpr* node1 = nullptr;
+    vector< pair <Token, SimpleExpr*>> node2Set;
+    Expression(Lexer);
+    ~Expression();
+};
+
+class VarDec
+{
+public:
+    Token iden;
+    Token type;
+    Expression* e = nullptr;
+    VarDec(Lexer);
+    ~VarDec();
+};
+
+class Statement;
+
+class Block
+{
+public:
+    Statement* st = nullptr;
+    Block(Lexer l);
+    ~Block();
 };
 
 class IfState
@@ -115,6 +109,23 @@ public:
     Block* elseBl = nullptr;
     IfState(Lexer);
     ~IfState();
+};
+
+class ReturnState
+{
+public:
+    Expression* expr = nullptr;
+    ReturnState(Lexer);
+    ~ReturnState();
+};
+
+class Assignment
+{
+public:
+    Token t;
+    Expression* exp = nullptr;
+    Assignment(Lexer);
+    ~Assignment();
 };
 
 class ForState
@@ -128,12 +139,30 @@ public:
     ~ForState();
 };
 
-class ReturnState
+class PrintState
 {
 public:
     Expression* expr = nullptr;
-    ReturnState(Lexer);
-    ~ReturnState();
+    PrintState(Lexer);
+    ~PrintState();
+};
+
+class FormalParam
+{
+public:
+    Token id;
+    Token type;
+    FormalParam(Lexer);
+    ~FormalParam();
+};
+
+class FormalParams
+{
+public:
+    FormalParam* first;
+    vector<FormalParam*> set;
+    FormalParams(Lexer);
+    ~FormalParams();
 };
 
 class FnDec
@@ -147,45 +176,27 @@ public:
     ~FnDec();
 };
 
-class Block
+class Statement
 {
 public:
-    Statement* st = nullptr;
-    Block(Lexer l);
-    ~Block();
+    VarDec* vrs = nullptr;
+    IfState* ifs = nullptr;
+    ForState* fors = nullptr;
+    ReturnState* ret = nullptr;
+    FnDec* fn = nullptr;
+    Block* bl = nullptr;
+    PrintState* pr = nullptr;
+    
+    Statement(Lexer);
+    ~Statement();
 };
 
-class PrintState
+class Program
 {
 public:
-    Expression* expr = nullptr;
-    PrintState(Lexer);
-    ~PrintState();
+    vector<Statement*> statements;
+    Program(Lexer);
+    ~Program();
 };
 
-class Assignment
-{
-public:
-    Token t;
-    Expression* exp = nullptr;
-    Assignment(Lexer);
-    ~Assignment();
-};
-
-class FormalParams
-{
-public:
-    FormalParam* first;
-    vector<FormalParam*> set;
-    FormalParams(Lexer);
-    ~FormalParams();
-};
-
-class FormalParam
-{
-public:
-    Token id;
-    Token type;
-    FormalParam(Lexer);
-    ~FormalParam();
-};
+#endif

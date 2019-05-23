@@ -1,6 +1,9 @@
 #include <string>
 using std::string;
 
+#ifndef MAIN_TOKEN_H
+#define MAIN_TOKEN_H
+
 enum tokenType{
     FLOAT_TYPE = 1,
     INT_TYPE,
@@ -63,3 +66,5 @@ public:
     //~Token();
 
 };
+
+#endif 

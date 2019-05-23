@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/Compiler.dir/Main.cpp.o CMakeFiles/Compiler.dir/ClassLib/Lexer.cpp.o  -o Compiler 
+/usr/bin/c++     CMakeFiles/Compiler.dir/Main.cpp.o CMakeFiles/Compiler.dir/ClassLib/Lexer.cpp.o CMakeFiles/Compiler.dir/ClassLib/Parser.cpp.o  -o Compiler 

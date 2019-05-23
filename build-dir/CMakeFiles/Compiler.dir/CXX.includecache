@@ -24,6 +24,22 @@ ctype.h
 vector
 -
 
+/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Parser.cpp
+Parser.h
+/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Parser.h
+
+/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Parser.h
+Token.h
+/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Token.h
+Lexer.h
+/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Lexer.h
+ParserNodes/MainHeader.h
+/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/ParserNodes/MainHeader.h
+
+/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/ParserNodes/MainHeader.h
+../Lexer.h
+/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Lexer.h
+
 /home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Token.h
 string
 -

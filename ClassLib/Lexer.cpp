@@ -282,7 +282,7 @@ void Lexer::GenerateTokens(){
 
 Token Lexer::getNextToken(){
     tokenCounter++;
-    if (tokenCounter < allTokens.size()){
+    if (tokenCounter-1 < allTokens.size()){
         return allTokens[tokenCounter-1];
     }
     else

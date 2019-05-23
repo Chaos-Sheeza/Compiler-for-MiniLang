@@ -5,6 +5,12 @@ CMakeFiles/Compiler.dir/ClassLib/Lexer.cpp.o
  /home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Lexer.cpp
  /home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Lexer.h
  /home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Token.h
+CMakeFiles/Compiler.dir/ClassLib/Parser.cpp.o
+ /home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Lexer.h
+ /home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Parser.cpp
+ /home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Parser.h
+ /home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/ParserNodes/MainHeader.h
+ /home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Token.h
 CMakeFiles/Compiler.dir/Main.cpp.o
  /home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Lexer.h
  /home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Token.h

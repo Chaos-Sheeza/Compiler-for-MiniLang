@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Lexer.cpp" "/home/jesmar/Documents/School/CompilerTheory/Assignment/build-dir/CMakeFiles/Compiler.dir/ClassLib/Lexer.cpp.o"
+  "/home/jesmar/Documents/School/CompilerTheory/Assignment/ClassLib/Parser.cpp" "/home/jesmar/Documents/School/CompilerTheory/Assignment/build-dir/CMakeFiles/Compiler.dir/ClassLib/Parser.cpp.o"
   "/home/jesmar/Documents/School/CompilerTheory/Assignment/Main.cpp" "/home/jesmar/Documents/School/CompilerTheory/Assignment/build-dir/CMakeFiles/Compiler.dir/Main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

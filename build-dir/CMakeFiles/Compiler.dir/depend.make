@@ -5,6 +5,12 @@ CMakeFiles/Compiler.dir/ClassLib/Lexer.cpp.o: ../ClassLib/Lexer.cpp
 CMakeFiles/Compiler.dir/ClassLib/Lexer.cpp.o: ../ClassLib/Lexer.h
 CMakeFiles/Compiler.dir/ClassLib/Lexer.cpp.o: ../ClassLib/Token.h
 
+CMakeFiles/Compiler.dir/ClassLib/Parser.cpp.o: ../ClassLib/Lexer.h
+CMakeFiles/Compiler.dir/ClassLib/Parser.cpp.o: ../ClassLib/Parser.cpp
+CMakeFiles/Compiler.dir/ClassLib/Parser.cpp.o: ../ClassLib/Parser.h
+CMakeFiles/Compiler.dir/ClassLib/Parser.cpp.o: ../ClassLib/ParserNodes/MainHeader.h
+CMakeFiles/Compiler.dir/ClassLib/Parser.cpp.o: ../ClassLib/Token.h
+
 CMakeFiles/Compiler.dir/Main.cpp.o: ../ClassLib/Lexer.h
 CMakeFiles/Compiler.dir/Main.cpp.o: ../ClassLib/Token.h
 CMakeFiles/Compiler.dir/Main.cpp.o: ../Main.cpp

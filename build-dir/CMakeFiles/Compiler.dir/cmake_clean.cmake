@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Compiler.dir/Main.cpp.o"
   "CMakeFiles/Compiler.dir/ClassLib/Lexer.cpp.o"
+  "CMakeFiles/Compiler.dir/ClassLib/Parser.cpp.o"
   "Compiler.pdb"
   "Compiler"
 )
