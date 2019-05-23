@@ -1,4 +1,4 @@
-#include "Term.h"
+#include "MainHeader.h"
 
 Term::Term(Lexer l){
     node1 = new Factor(l);

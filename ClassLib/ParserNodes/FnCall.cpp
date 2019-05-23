@@ -1,4 +1,4 @@
-#include "1MainHeader.h"
+#include "MainHeader.h"
 
 FnCall::FnCall(Token prevT, Lexer l){
     t = prevT;

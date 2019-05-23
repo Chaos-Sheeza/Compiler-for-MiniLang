@@ -1,4 +1,4 @@
-#include "1MainHeader.h"
+#include "MainHeader.h"
 
 Factor::Factor(Lexer l){
     if (l.peekNextToken().token == NUMBER_DEC || l.peekNextToken().token == TRUE_BOOLLIT || l.peekNextToken().token == FALSE_BOOLLIT){
