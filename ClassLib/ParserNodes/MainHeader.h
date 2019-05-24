@@ -14,6 +14,7 @@ public:
     Expression* expr = nullptr;
     vector<Expression*> exprSet;
     ActualParams(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~ActualParams();
 };
 
@@ -23,6 +24,7 @@ public:
     Token t;
     ActualParams* ap = nullptr;
     FnCall(Token, Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~FnCall();
 };
 
@@ -31,6 +33,7 @@ class SubExpression
 public:
     Expression* expr = nullptr;
     SubExpression(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~SubExpression();
 };
 
@@ -40,6 +43,7 @@ public:
     Token t;
     Expression* expr = nullptr;
     Unary(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~Unary();
 };
 
@@ -52,6 +56,7 @@ public:
     Unary* un;
     
     Factor(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~Factor();
 };
 
@@ -61,6 +66,7 @@ public:
     Factor* node1 = nullptr;
     vector<pair <Token, Factor*>> node2Set;
     Term(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~Term();
 };
 
@@ -70,6 +76,7 @@ public:
     Term* node1 = nullptr;
     vector<pair <Token, Term*>> node2Set;
     SimpleExpr(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~SimpleExpr();
 };
 
@@ -79,6 +86,7 @@ public:
     SimpleExpr* node1 = nullptr;
     vector< pair <Token, SimpleExpr*>> node2Set;
     Expression(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~Expression();
 };
 
@@ -89,6 +97,7 @@ public:
     Token type;
     Expression* e = nullptr;
     VarDec(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~VarDec();
 };
 
@@ -99,6 +108,7 @@ class Block
 public:
     Statement* st = nullptr;
     Block(Lexer l);
+    void accept(Visitor* v){ v->visit(this); };
     ~Block();
 };
 
@@ -109,6 +119,7 @@ public:
     Block* ifBl = nullptr;
     Block* elseBl = nullptr;
     IfState(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~IfState();
 };
 
@@ -117,6 +128,7 @@ class ReturnState
 public:
     Expression* expr = nullptr;
     ReturnState(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~ReturnState();
 };
 
@@ -126,6 +138,7 @@ public:
     Token t;
     Expression* exp = nullptr;
     Assignment(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~Assignment();
 };
 
@@ -137,6 +150,7 @@ public:
     Assignment* at = nullptr;
     Block* bl = nullptr;
     ForState(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~ForState();
 };
 
@@ -145,6 +159,7 @@ class PrintState
 public:
     Expression* expr = nullptr;
     PrintState(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~PrintState();
 };
 
@@ -154,6 +169,7 @@ public:
     Token id;
     Token type;
     FormalParam(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~FormalParam();
 };
 
@@ -163,6 +179,7 @@ public:
     FormalParam* first;
     vector<FormalParam*> set;
     FormalParams(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~FormalParams();
 };
 
@@ -174,6 +191,7 @@ public:
     Token type;
     Block* bl;
     FnDec(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~FnDec();
 };
 
@@ -189,6 +207,7 @@ public:
     PrintState* pr = nullptr;
     
     Statement(Lexer);
+    void accept(Visitor* v){ v->visit(this); };
     ~Statement();
 };
 
@@ -197,15 +216,14 @@ class Program
 public:
     vector<Statement*> statements;
     Program(Lexer);
-
-    void accept(Visitor);
-
+    void accept(Visitor* v){ v->visit(this); };
     ~Program();
 };
 
 class Visitor
 {
 public:
+    int tabCounter = 0;
     Visitor();
 
     void visit(ActualParams*);
