@@ -6,6 +6,7 @@
 
 class Expression;
 class FnDec;
+class Visitor;
 
 class ActualParams
 {
@@ -196,7 +197,39 @@ class Program
 public:
     vector<Statement*> statements;
     Program(Lexer);
+
+    void accept(Visitor);
+
     ~Program();
+};
+
+class Visitor
+{
+public:
+    Visitor();
+
+    void visit(ActualParams*);
+    void visit(FnCall*);
+    void visit(SubExpression*);
+    void visit(Unary*);
+    void visit(Factor*);
+    void visit(Term*);
+    void visit(SimpleExpr*);
+    void visit(Expression*);
+    void visit(VarDec*);
+    void visit(Block*);
+    void visit(IfState*);
+    void visit(ReturnState*);
+    void visit(Assignment*);
+    void visit(ForState*);
+    void visit(PrintState*);
+    void visit(FormalParam*);
+    void visit(FormalParams*);
+    void visit(FnDec*);
+    void visit(Statement*);
+    void visit(Program*);
+
+    ~Visitor();
 };
 
 #endif

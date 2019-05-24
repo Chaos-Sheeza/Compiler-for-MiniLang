@@ -1,1 +1,1 @@
-var square : int = 2;
+print 2;

@@ -5,3 +5,8 @@ Program::Program(Lexer l){
         statements.push_back(new Statement(l));
     }
 }
+
+void Program::accept(Visitor v){
+    v.visit(this);
+}
+

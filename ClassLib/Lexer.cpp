@@ -279,6 +279,7 @@ void Lexer::GenerateTokens(){
     states(lexeme,prevState);
     prevState = 0;
     lexeme = "";
+    allTokens.push_back(Token());
 }
 
 Token Lexer::getNextToken(){
