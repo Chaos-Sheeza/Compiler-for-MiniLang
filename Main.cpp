@@ -4,9 +4,11 @@
 
 int main( int argc, const char* argv[])
 {
-    std::string fileName = "../Test.txt";
+    std::string fileName = "../TestCode.txt";
     Lexer* l = new Lexer(fileName);
     l->debugPrint();
-    Parser p = Parser(l);
+    Parser* p = new Parser(l);
+    Visitor* v;
+    p->prog->accept(v);
     return 0;
 }

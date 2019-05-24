@@ -8,8 +8,9 @@ FnCall::FnCall(Token prevT, Lexer* l){
     else
     {
         ap = new ActualParams(l);
-        if(l->peekNextToken().token != CIRCLECL_BRACKET){
-            std::cerr << "Expected \")\"";
+        std::cout << l->peekNextToken().token << "\n";
+        if(l->getNextToken().token != CIRCLECL_BRACKET){
+            std::cerr << "Expected \")\"\n";
             exit(EXIT_FAILURE);
         }
     } 

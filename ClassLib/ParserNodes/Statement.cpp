@@ -7,8 +7,6 @@ Statement::Statement(Lexer* l){
     case VAR_DEC:
         l->getNextToken();
         vrs = new VarDec(l);
-        dick = l->getNextToken();
-        std::cout << dick.token << "\n";
         if (l->getNextToken().token != SEMICOL_PUNCT)
         {
             std::cerr << "Syntax error: forgot end of line token ;" << "\n";
