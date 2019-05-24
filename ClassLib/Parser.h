@@ -9,7 +9,7 @@
 class Parser
 {
 public:
-    Parser(Lexer);
+    Parser(Lexer*);
     Program* prog = nullptr;
     //~Parser();
 };

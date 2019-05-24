@@ -1,28 +1,31 @@
 #include "MainHeader.h"
 
-Statement::Statement(Lexer l){
-    switch (l.peekNextToken().token)
+Statement::Statement(Lexer* l){
+    Token dick;
+    switch (l->peekNextToken().token)
     {
     case VAR_DEC:
-        l.getNextToken();
+        l->getNextToken();
         vrs = new VarDec(l);
-        if (l.getNextToken().token != SEMICOL_PUNCT)
+        dick = l->getNextToken();
+        std::cout << dick.token << "\n";
+        if (l->getNextToken().token != SEMICOL_PUNCT)
         {
             std::cerr << "Syntax error: forgot end of line token ;" << "\n";
             exit(EXIT_FAILURE);
         }
         break;
     case IF_EXP:
-        l.getNextToken();
+        l->getNextToken();
         ifs = new IfState(l);
         break;
     case FOR_STATE:
-        l.getNextToken();
+        l->getNextToken();
         fors = new ForState(l);
         break;
     case RET_EXP:
         ret = new ReturnState(l);
-        if (l.getNextToken().token != SEMICOL_PUNCT)
+        if (l->getNextToken().token != SEMICOL_PUNCT)
         {
             std::cerr << "Syntax error: forgot end of line token ;" << "\n";
             exit(EXIT_FAILURE);
@@ -36,10 +39,10 @@ Statement::Statement(Lexer l){
         break;
     case PRINT_DEC:
         pr = new PrintState(l);
-        l.getNextToken();
+        l->getNextToken();
         break;
     default:
-        std::cerr << "Syntax error in " << l.getNextToken().lexeme << "\n";
+        std::cerr << "Syntax error in " << l->getNextToken().lexeme << "\n";
         exit(EXIT_FAILURE);
         break;
     }

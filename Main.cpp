@@ -5,8 +5,8 @@
 int main( int argc, const char* argv[])
 {
     std::string fileName = "../Test.txt";
-    Lexer l = Lexer(fileName);
-    l.debugPrint();
+    Lexer* l = new Lexer(fileName);
+    l->debugPrint();
     Parser p = Parser(l);
     return 0;
 }

@@ -1,5 +1,5 @@
 #include "Parser.h"
 
-Parser::Parser(Lexer l){
+Parser::Parser(Lexer* l){
         prog = new Program(l);
 }

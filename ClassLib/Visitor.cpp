@@ -17,6 +17,23 @@ void Visitor::visit(Assignment* a){
     cout << "</Assignment>\n";
 }
 
+void Visitor::visit(ActualParams* a){
+    for(int j=0;j<tabCounter;j++){ cout << "\t"; }
+    cout << "<ActualParams>\n";
+
+    tabCounter++;
+    a->expr->accept(this);
+    int i = 0;
+    while(i < a->exprSet.size()){
+        a->exprSet[i]->accept(this);
+        i++;
+    }
+    
+    tabCounter --;
+    for(int j=0;j<tabCounter;j++){ cout << "\t"; }
+    cout << "</ActualParams>\n";
+}
+
 void Visitor::visit(FnCall* f){
     for(int j=0;j<tabCounter;j++){ cout << "\t"; }
     cout << "<FnCall>\n";

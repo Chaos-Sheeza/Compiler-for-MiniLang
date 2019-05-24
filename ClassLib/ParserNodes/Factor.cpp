@@ -1,23 +1,23 @@
 #include "MainHeader.h"
 
-Factor::Factor(Lexer l){
-    if (l.peekNextToken().token == NUMBER_DEC || l.peekNextToken().token == TRUE_BOOLLIT || l.peekNextToken().token == FALSE_BOOLLIT){
-        t = l.getNextToken();
+Factor::Factor(Lexer* l){
+    if (l->peekNextToken().token == NUMBER_DEC || l->peekNextToken().token == TRUE_BOOLLIT || l->peekNextToken().token == FALSE_BOOLLIT){
+        t = l->getNextToken();
     }
-    else if(l.peekNextToken().token == VARNAME_DEC){
-        Token temp = l.getNextToken();
-        if(l.peekNextToken().token == CIRCLEOP_BRACKET){
-            l.getNextToken();
+    else if(l->peekNextToken().token == VARNAME_DEC){
+        Token temp = l->getNextToken();
+        if(l->peekNextToken().token == CIRCLEOP_BRACKET){
+            l->getNextToken();
             fnCl = new FnCall(temp, l);
         }
         else{
             t =temp;
         }
     }
-    else if(l.peekNextToken().token == CIRCLEOP_BRACKET){
+    else if(l->peekNextToken().token == CIRCLEOP_BRACKET){
         subExpr = new SubExpression(l);
     }
-    else if(l.peekNextToken().token == SUB_ADDOP || l.peekNextToken().token == NOT_UNARY){
+    else if(l->peekNextToken().token == SUB_ADDOP || l->peekNextToken().token == NOT_UNARY){
         un = new Unary(l);
     }
     else{
